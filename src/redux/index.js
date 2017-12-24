@@ -23,9 +23,7 @@ const combinations = [
 const calculate = (board, state) => {
 
     const res = combinations.some(winning => (
-        winning.reduce((player, dot) => {
-            return player === board[dot[0]][dot[1]] ? player : '';
-        }, state.player)
+        winning.reduce((player, dot) => player === board[dot[0]][dot[1]] ? player : '', state.player)
     )) ? state.player : null
     return res;
 }

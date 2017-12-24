@@ -19,7 +19,7 @@ class Board extends React.Component {
         const board = this.drawCells();
         return (
             <div>
-                <h1>{this.props.winner}</h1>
+                <h1>The winner is: {this.props.winner}</h1>
                 {board}
             </div>
         )
@@ -29,15 +29,3 @@ class Board extends React.Component {
 const mapStateToProps = state => ({board: state.board, winner: state.winner});
 
 export default connect(mapStateToProps)(Board);
-
-// redux had the board state
-// array of length 9 - max number of moves possible
-// each move is an object that holds:
-// number - which step
-// array - cells either null, z or o - pass down to individual cells as props
-
-
-// have a cell
-// cell has props that has null, x or o
-// redux map state to props
-// redux dispatch
