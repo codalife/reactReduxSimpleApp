@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 const cellStyle = {
     width: 100,
     height: 100,
-    borderWidth: 0.5,
-    borderColor: 'black',
-    backgroundColor: "gray",
-    boxSizing: "content-box"
+    backgroundColor: "cadetblue",
+    verticalAlign: "top",
+    color: "white"
 }
 
 const Cell = props => (<button id={props.id} onClick={props.giveData} style={cellStyle}>{props.player}</button>);

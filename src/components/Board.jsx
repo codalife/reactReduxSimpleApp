@@ -21,11 +21,16 @@ class Board extends React.Component {
             <div>
                 <h1>The winner is: {this.props.winner}</h1>
                 {board}
+                <button onClick={this.props.refresh}>Refresh</button>
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({board: state.board, winner: state.winner});
-
-export default connect(mapStateToProps)(Board);
+const mapDispatchToProps = dispatch => ({
+    refresh(e) {
+        dispatch({type: 'REFRESH'})
+    }
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Board);
